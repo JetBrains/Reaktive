@@ -7,6 +7,9 @@ repositories {
     google()
     mavenCentral()
     gradlePluginPortal()
+
+    val kotlin_repo_url: String? by project
+    kotlin_repo_url?.let { maven(it) }
 }
 
 dependencies {
