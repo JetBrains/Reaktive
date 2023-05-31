@@ -10,6 +10,11 @@ android {
 
 kotlin {
     sourceSets {
+        all{
+            languageSettings{
+                optIn("kotlinx.cinterop.ExperimentalForeignApi")
+            }
+        }
         commonTest {
             dependencies {
                 implementation project(':reaktive-testing')
