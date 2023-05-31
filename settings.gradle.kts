@@ -1,5 +1,8 @@
 pluginManagement {
     repositories {
+        val kotlin_repo_url: String? by settings
+        kotlin_repo_url?.let { maven(it) }
+
         google()
         mavenCentral()
         gradlePluginPortal()

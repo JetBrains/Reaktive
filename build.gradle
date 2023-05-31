@@ -9,7 +9,21 @@ plugins {
 
 allprojects {
     repositories {
+        if(kotlin_repo_url) {
+            maven {
+                url kotlin_repo_url
+            }
+        }
         google()
         mavenCentral()
+    }
+
+    configurations.configureEach {
+        resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+            if (details.requested.group == 'org.jetbrains.kotlin') {
+                details.useVersion kotlin_version
+                details.because 'multiplatofrm quality gate'
+            }
+        }
     }
 }
