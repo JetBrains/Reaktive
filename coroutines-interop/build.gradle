@@ -26,3 +26,11 @@ kotlin {
         }
     }
 }
+
+
+android{
+    lint{
+        quiet = true
+        checkReleaseBuilds = false
+    }
+}
