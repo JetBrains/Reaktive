@@ -16,6 +16,9 @@ kotlin {
                 runTask?.args('')
             }
         }
+        binaries.configureEach {
+            freeCompilerArgs += "-Xdisable-phases=EscapeAnalysis"
+        }
     }
 
     sourceSets {

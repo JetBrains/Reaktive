@@ -13,6 +13,9 @@ kotlin {
             framework {
                 baseName = "shared"
                 export project(':reaktive')
+                configureEach {
+                    freeCompilerArgs += "-Xdisable-phases=EscapeAnalysis"
+                }
             }
         }
     }
