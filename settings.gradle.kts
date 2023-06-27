@@ -9,6 +9,15 @@ pluginManagement {
     }
 }
 
+dependencyResolutionManagement {
+    versionCatalogs {
+        create("libs") {
+            val kotlin_version: String by settings
+            version("kotlin", kotlin_version)
+        }
+    }
+}
+
 includeBuild("includedBuild/gradleConfiguration")
 
 if (!startParameter.projectProperties.containsKey("check_publication")) {
