@@ -7,7 +7,7 @@ expect class AtomicReference<T>(initialValue: T) {
 
     var value: T
 
-    fun getAndSet(newValue: T): T
+    fun getAndSet(p0: T): T
 
-    fun compareAndSet(expectedValue: T, newValue: T): Boolean
+    fun compareAndSet(p0: T, p1: T): Boolean
 }

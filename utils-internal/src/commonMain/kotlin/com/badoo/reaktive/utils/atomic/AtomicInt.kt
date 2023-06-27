@@ -7,7 +7,7 @@ expect class AtomicInt(initialValue: Int = 0) {
 
     var value: Int
 
-    fun addAndGet(delta: Int): Int
+    fun addAndGet(p0: Int): Int
 
-    fun compareAndSet(expectedValue: Int, newValue: Int): Boolean
+    fun compareAndSet(p0: Int, p1: Int): Boolean
 }

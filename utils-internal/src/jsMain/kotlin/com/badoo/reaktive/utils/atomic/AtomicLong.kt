@@ -7,15 +7,15 @@ actual class AtomicLong actual constructor(initialValue: Long) {
 
     actual var value: Long = initialValue
 
-    actual fun addAndGet(delta: Long): Long {
-        value += delta
+    actual fun addAndGet(p0: Long): Long {
+        value += p0
 
         return value
     }
 
-    actual fun compareAndSet(expectedValue: Long, newValue: Long): Boolean =
-        if (value == expectedValue) {
-            value = newValue
+    actual fun compareAndSet(p0: Long, p1: Long): Boolean =
+        if (value == p0) {
+            value = p1
             true
         } else {
             false
