@@ -12,6 +12,8 @@ expect open class CompositeDisposable() : Disposable {
      */
     override fun dispose()
 
+    override val isDisposed: Boolean
+
     /**
      * Atomically either adds the specified [Disposable] or disposes it if container is already disposed
      *
