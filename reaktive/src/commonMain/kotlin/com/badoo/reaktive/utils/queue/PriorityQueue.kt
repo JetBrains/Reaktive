@@ -2,7 +2,7 @@
 
 package com.badoo.reaktive.utils.queue
 
-internal class PriorityQueue<T>(
+public class PriorityQueue<T>(
     private val comparator: Comparator<in T>
 ) : Iterable<T> {
 

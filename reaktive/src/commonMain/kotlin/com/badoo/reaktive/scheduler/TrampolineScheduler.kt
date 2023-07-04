@@ -11,7 +11,7 @@ import com.badoo.reaktive.utils.coerceAtLeastZero
 import com.badoo.reaktive.utils.serializer.serializer
 import kotlin.time.Duration
 
-internal class TrampolineScheduler(
+public class TrampolineScheduler(
     private val clock: Clock = DefaultClock,
     private val sleep: (Duration) -> Boolean
 ) : Scheduler {
