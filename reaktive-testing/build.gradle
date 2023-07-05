@@ -6,6 +6,10 @@ plugins {
 
 android {
     namespace "com.badoo.reaktive.test"
+    lint{
+        quiet = true
+        checkReleaseBuilds = false
+    }
 }
 
 kotlin {
