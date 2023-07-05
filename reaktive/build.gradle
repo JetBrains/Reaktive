@@ -6,6 +6,10 @@ plugins {
 
 android {
     namespace "com.badoo.reaktive"
+    lint{
+        quiet = true
+        checkReleaseBuilds = false
+    }
 }
 
 kotlin {

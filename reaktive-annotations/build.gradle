@@ -6,4 +6,9 @@ plugins {
 
 android {
     namespace "com.badoo.reaktive.annotations"
+
+    lint{
+        quiet = true
+        checkReleaseBuilds = false
+    }
 }
