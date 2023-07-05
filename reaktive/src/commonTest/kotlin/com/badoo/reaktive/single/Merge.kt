@@ -10,7 +10,7 @@ import com.badoo.reaktive.observable.observable
 import com.badoo.reaktive.observable.serialize
 import com.badoo.reaktive.utils.atomic.AtomicInt
 
-fun <T> Iterable<Single<T>>.merge(): Observable<T> =
+fun <T> Iterable<Single<T>>.mergeInTest(): Observable<T> =
     observable { emitter ->
         val disposables = CompositeDisposable()
         emitter.setDisposable(disposables)
@@ -48,4 +48,4 @@ fun <T> Iterable<Single<T>>.merge(): Observable<T> =
 fun <T> merge(vararg sources: Single<T>): Observable<T> =
     sources
         .asIterable()
-        .merge()
+        .mergeInTest()
