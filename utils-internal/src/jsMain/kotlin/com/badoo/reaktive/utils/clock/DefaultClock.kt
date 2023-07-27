@@ -14,7 +14,7 @@ actual object DefaultClock : Clock {
 
     private val isWindowDefined = jsTypeOf(window) != "undefined"
 
-    override val uptime: Duration
+    actual override val uptime: Duration
         get() =
             if (isWindowDefined) {
                 window.performance.now().milliseconds
