@@ -13,8 +13,8 @@ actual class AtomicLong actual constructor(initialValue: Long) {
             delegate.value = value
         }
 
-    actual fun addAndGet(p0: Long): Long = delegate.addAndGet(p0)
+    actual fun addAndGet(delta: Long): Long = delegate.addAndGet(delta)
 
-    actual fun compareAndSet(p0: Long, p1: Long): Boolean =
-        delegate.compareAndSet(p0, p1)
+    actual fun compareAndSet(expectedValue: Long, newValue: Long): Boolean =
+        delegate.compareAndSet(expectedValue, newValue)
 }

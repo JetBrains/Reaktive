@@ -13,9 +13,9 @@ actual class AtomicReference<T> actual constructor(initialValue: T) {
             delegate.value = value
         }
 
-    actual fun getAndSet(p0: T): T =
-        getAndChange { p0 }
+    actual fun getAndSet(newValue: T): T =
+        getAndChange { newValue }
 
-    actual fun compareAndSet(p0: T, p1: T): Boolean =
-        delegate.compareAndSet(p0, p1)
+    actual fun compareAndSet(expectedValue: T, newValue: T): Boolean =
+        delegate.compareAndSet(expectedValue, newValue)
 }

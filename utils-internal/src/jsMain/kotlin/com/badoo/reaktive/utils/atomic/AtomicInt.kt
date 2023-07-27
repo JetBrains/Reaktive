@@ -7,15 +7,15 @@ actual class AtomicInt actual constructor(initialValue: Int) {
 
     actual var value: Int = initialValue
 
-    actual fun addAndGet(p0: Int): Int {
-        value += p0
+    actual fun addAndGet(delta: Int): Int {
+        value += delta
 
         return value
     }
 
-    actual fun compareAndSet(p0: Int, p1: Int): Boolean =
-        if (value == p0) {
-            value = p1
+    actual fun compareAndSet(expectedValue: Int, newValue: Int): Boolean =
+        if (value == expectedValue) {
+            value = newValue
             true
         } else {
             false

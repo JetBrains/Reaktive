@@ -13,8 +13,8 @@ actual class AtomicBoolean actual constructor(initialValue: Boolean) {
             delegate.value = value.intValue
         }
 
-    actual fun compareAndSet(p0: Boolean, p1: Boolean): Boolean =
-        delegate.compareAndSet(p0.intValue, p1.intValue)
+    actual fun compareAndSet(expectedValue: Boolean, newValue: Boolean): Boolean =
+        delegate.compareAndSet(expectedValue.intValue, newValue.intValue)
 
     private companion object {
         private val Boolean.intValue: Int get() = if (this) 1 else 0

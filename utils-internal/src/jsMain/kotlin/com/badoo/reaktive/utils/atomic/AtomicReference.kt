@@ -7,12 +7,12 @@ actual class AtomicReference<T> actual constructor(initialValue: T) {
 
     actual var value: T = initialValue
 
-    actual fun getAndSet(p0: T): T =
-        value.also { value = p0 }
+    actual fun getAndSet(newValue: T): T =
+        value.also { value = newValue }
 
-    actual fun compareAndSet(p0: T, p1: T): Boolean =
-        if (value == p0) {
-            value = p1
+    actual fun compareAndSet(expectedValue: T, newValue: T): Boolean =
+        if (value == expectedValue) {
+            value = newValue
             true
         } else {
             false

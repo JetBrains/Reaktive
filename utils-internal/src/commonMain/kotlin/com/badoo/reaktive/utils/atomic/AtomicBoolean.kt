@@ -7,5 +7,5 @@ expect class AtomicBoolean(initialValue: Boolean = false) {
 
     var value: Boolean
 
-    fun compareAndSet(p0: Boolean, p1: Boolean): Boolean
+    fun compareAndSet(expectedValue: Boolean, newValue: Boolean): Boolean
 }
