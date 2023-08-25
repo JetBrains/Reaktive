@@ -1,11 +1,12 @@
 package com.badoo.reaktive.utils.atomic
 
 import com.badoo.reaktive.utils.InternalReaktiveApi
+import kotlin.concurrent.AtomicLong
 
 @InternalReaktiveApi
 actual class AtomicLong actual constructor(initialValue: Long) {
 
-    private val delegate = kotlin.native.concurrent.AtomicLong(initialValue)
+    private val delegate = AtomicLong(initialValue)
 
     actual var value: Long
         get() = delegate.value

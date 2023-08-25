@@ -10,7 +10,6 @@ import platform.darwin.DISPATCH_TIME_NOW
 import platform.darwin.dispatch_after
 import platform.darwin.dispatch_get_main_queue
 import platform.darwin.dispatch_time
-import kotlin.native.concurrent.AtomicReference
 import kotlin.time.Duration
 
 internal class MainScheduler : Scheduler {
@@ -78,7 +77,7 @@ internal class MainScheduler : Scheduler {
             task: () -> Unit
         ) : () -> Unit, Disposable {
 
-            private val taskReference = AtomicReference<(() -> Unit)?>(task)
+            private val taskReference = kotlin.concurrent.AtomicReference<(() -> Unit)?>(task)
 
             override fun invoke() {
                 val task: (() -> Unit)? = taskReference.value

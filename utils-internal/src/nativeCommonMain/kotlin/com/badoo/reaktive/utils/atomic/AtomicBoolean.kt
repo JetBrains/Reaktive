@@ -1,11 +1,12 @@
 package com.badoo.reaktive.utils.atomic
 
 import com.badoo.reaktive.utils.InternalReaktiveApi
+import kotlin.concurrent.AtomicInt
 
 @InternalReaktiveApi
 actual class AtomicBoolean actual constructor(initialValue: Boolean) {
 
-    private val delegate = kotlin.native.concurrent.AtomicInt(initialValue.intValue)
+    private val delegate = AtomicInt(initialValue.intValue)
 
     actual var value: Boolean
         get() = delegate.value != 0

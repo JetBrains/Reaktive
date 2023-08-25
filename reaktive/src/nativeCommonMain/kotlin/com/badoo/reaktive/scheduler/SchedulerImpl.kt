@@ -7,7 +7,6 @@ import com.badoo.reaktive.looperthread.LooperThreadStrategy
 import com.badoo.reaktive.utils.clock.Clock
 import com.badoo.reaktive.utils.clock.DefaultClock
 import com.badoo.reaktive.utils.coerceAtLeastZero
-import kotlin.native.concurrent.AtomicInt
 import kotlin.time.Duration
 
 internal class SchedulerImpl(
@@ -31,7 +30,7 @@ internal class SchedulerImpl(
     ) : Scheduler.Executor {
 
         private val looperThread = looperThreadStrategy.get()
-        private val _isDisposed = AtomicInt(0)
+        private val _isDisposed = kotlin.concurrent.AtomicInt(0)
         override val isDisposed: Boolean get() = _isDisposed.value != 0
 
         init {

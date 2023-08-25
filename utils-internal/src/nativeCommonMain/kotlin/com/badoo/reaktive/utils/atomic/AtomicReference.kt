@@ -1,11 +1,12 @@
 package com.badoo.reaktive.utils.atomic
 
 import com.badoo.reaktive.utils.InternalReaktiveApi
+import kotlin.concurrent.AtomicReference
 
 @InternalReaktiveApi
 actual class AtomicReference<T> actual constructor(initialValue: T) {
 
-    private val delegate = kotlin.native.concurrent.AtomicReference(initialValue)
+    private val delegate = AtomicReference(initialValue)
 
     actual var value: T
         get() = delegate.value
