@@ -1,11 +1,11 @@
 package com.badoo.reaktive.utils
 
+import com.badoo.reaktive.utils.atomic.AtomicLong
 import com.badoo.reaktive.utils.clock.Clock
 import com.badoo.reaktive.utils.clock.DefaultClock
 import com.badoo.reaktive.utils.lock.ConditionLock
 import com.badoo.reaktive.utils.lock.synchronized
 import com.badoo.reaktive.utils.queue.PriorityQueue
-import kotlin.native.concurrent.AtomicLong
 import kotlin.time.Duration
 
 internal class DelayQueue<T : Any>(

@@ -3,6 +3,8 @@ package com.badoo.reaktive.utils.lock
 import com.badoo.reaktive.utils.InternalReaktiveApi
 import platform.Foundation.NSRecursiveLock
 
+@OptIn(ExperimentalMultiplatform::class)
+@AllowDifferentMembersInActual
 @InternalReaktiveApi
 actual open class Lock {
 

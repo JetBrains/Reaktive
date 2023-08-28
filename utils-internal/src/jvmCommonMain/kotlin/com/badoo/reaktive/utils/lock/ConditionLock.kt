@@ -5,6 +5,8 @@ import java.util.concurrent.locks.ReentrantLock
 import kotlin.time.Duration
 import kotlin.time.Duration.Companion.nanoseconds
 
+@OptIn(ExperimentalMultiplatform::class)
+@AllowDifferentMembersInActual
 @InternalReaktiveApi
 actual open class ConditionLock : ReentrantLock() {
 
