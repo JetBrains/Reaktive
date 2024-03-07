@@ -46,7 +46,7 @@ class SchedulerCoroutineDispatcherTest {
         val endTime = AtomicReference(startTime)
 
         launch(dispatcher) {
-            delay(500.milliseconds)
+            delay(1000.milliseconds)
             endTime.value = DefaultClock.uptime
         }
 
