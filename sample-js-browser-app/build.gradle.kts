@@ -22,6 +22,15 @@ kotlin {
         browser()
     }
 
+    compilerOptions {
+        val kotlin_language_version: String? by project
+        kotlin_language_version?.let { languageVersion.set(org.jetbrains.kotlin.gradle.dsl.KotlinVersion.fromVersion(it)) }
+
+        val kotlin_api_version: String? by project
+        kotlin_api_version?.let { apiVersion.set(org.jetbrains.kotlin.gradle.dsl.KotlinVersion.fromVersion(it)) }
+    }
+
+
     sourceSets {
         commonMain.dependencies {
             implementation(project(":reaktive"))

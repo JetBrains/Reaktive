@@ -1,7 +1,21 @@
+import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
+
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
 }
+
+kotlin {
+    compilerOptions{
+        if(project.hasProperty('kotlin_language_version')) {
+            languageVersion.set(KotlinVersion.fromVersion(kotlin_language_version))
+        }
+        if(project.hasProperty('kotlin_api_version')) {
+            apiVersion.set(KotlinVersion.fromVersion(kotlin_api_version))
+        }
+    }
+}
+
 
 android {
     namespace "com.badoo.reaktive.sample.android"

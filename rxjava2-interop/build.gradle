@@ -1,4 +1,5 @@
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
 
 plugins {
     id 'org.jetbrains.kotlin.jvm'
@@ -12,6 +13,12 @@ version = reaktive_version
 compileKotlin {
     compilerOptions {
         jvmTarget = JvmTarget.JVM_1_8
+        if(project.hasProperty('kotlin_language_version')) {
+            languageVersion.set(KotlinVersion.fromVersion(kotlin_language_version))
+        }
+        if(project.hasProperty('kotlin_api_version')) {
+            apiVersion.set(KotlinVersion.fromVersion(kotlin_api_version))
+        }
     }
 }
 
