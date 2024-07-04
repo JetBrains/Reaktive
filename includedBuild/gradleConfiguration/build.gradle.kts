@@ -21,6 +21,7 @@ dependencies {
     implementation(libs.kotlinx.compatibility)
     implementation(libs.publish.plugin)
     implementation(libs.dokka.plugin)
+    implementation(libs.kotlinx.metadata)
 }
 
 gradlePlugin {
