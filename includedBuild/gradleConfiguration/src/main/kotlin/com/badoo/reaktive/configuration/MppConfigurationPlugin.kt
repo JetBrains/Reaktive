@@ -12,6 +12,7 @@ import org.gradle.kotlin.dsl.withType
 import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
+import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 class MppConfigurationPlugin : Plugin<Project> {
@@ -25,7 +26,22 @@ class MppConfigurationPlugin : Plugin<Project> {
         target.apply(plugin = "org.jetbrains.kotlin.multiplatform")
         target.group = target.findProperty("reaktive_group_id") as Any
         target.version = target.findProperty("reaktive_version") as Any
+
+
+        val customKotlinLangVersion = target.findProperty("kotlin_language_version") as String?
+        val customKotlinApiVersion = target.findProperty("kotlin_api_version") as String?
+        println("[QG] The build use custom LV: $customKotlinLangVersion and AV: $customKotlinApiVersion")
+
         target.kotlin {
+            compilerOptions{
+                customKotlinLangVersion?.let{
+                    languageVersion.set(KotlinVersion.fromVersion(it))
+                }
+                customKotlinApiVersion?.let{
+                    apiVersion.set(KotlinVersion.fromVersion(it))
+                }
+            }
+
             sourceSets {
                 maybeCreate("commonMain").dependencies {
                     implementation(target.getLibrary("kotlin-stdlib"))
