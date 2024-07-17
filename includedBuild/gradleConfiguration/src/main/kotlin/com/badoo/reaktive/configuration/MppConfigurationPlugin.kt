@@ -30,7 +30,7 @@ class MppConfigurationPlugin : Plugin<Project> {
 
         val customKotlinLangVersion = target.findProperty("kotlin_language_version") as String?
         val customKotlinApiVersion = target.findProperty("kotlin_api_version") as String?
-        println("[QG] The build use custom LV: $customKotlinLangVersion and AV: $customKotlinApiVersion")
+        println("[QG] The build use custom LanguageVersion: $customKotlinLangVersion and ApiVersion: $customKotlinApiVersion")
 
         target.kotlin {
             compilerOptions{
