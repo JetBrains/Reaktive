@@ -22,6 +22,7 @@ class WasmJsPlugin : Plugin<Project> {
             sourceSets.getByName("wasmJsMain") {
                 dependencies {
                     implementation(project.getLibrary("kotlin-stdlib"))
+                    implementation("org.jetbrains.kotlinx:kotlinx-browser:0.1")
                 }
             }
             sourceSets.getByName("wasmJsTest") {

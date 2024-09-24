@@ -36,5 +36,8 @@ kotlin {
             implementation(project(":reaktive"))
             implementation(project(":sample-mpp-module"))
         }
+        wasmJsMain.dependencies {
+            implementation("org.jetbrains.kotlinx:kotlinx-browser:0.1")
+        }
     }
 }
