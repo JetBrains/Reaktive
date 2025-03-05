@@ -7,6 +7,7 @@ public abstract interface class com/badoo/reaktive/base/CompleteCallback {
 
 public abstract interface class com/badoo/reaktive/base/Connectable {
 	public abstract fun connect (Lkotlin/jvm/functions/Function1;)V
+	public static synthetic fun connect$default (Lcom/badoo/reaktive/base/Connectable;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
 }
 
 public final class com/badoo/reaktive/base/Connectable$DefaultImpls {
@@ -284,6 +285,10 @@ public abstract interface class com/badoo/reaktive/disposable/scope/DisposableSc
 	public abstract fun subscribeScoped (Lcom/badoo/reaktive/maybe/Maybe;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function1;)Lcom/badoo/reaktive/disposable/Disposable;
 	public abstract fun subscribeScoped (Lcom/badoo/reaktive/observable/Observable;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function1;)Lcom/badoo/reaktive/disposable/Disposable;
 	public abstract fun subscribeScoped (Lcom/badoo/reaktive/single/Single;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)Lcom/badoo/reaktive/disposable/Disposable;
+	public static synthetic fun subscribeScoped$default (Lcom/badoo/reaktive/disposable/scope/DisposableScope;Lcom/badoo/reaktive/completable/Completable;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;ILjava/lang/Object;)Lcom/badoo/reaktive/disposable/Disposable;
+	public static synthetic fun subscribeScoped$default (Lcom/badoo/reaktive/disposable/scope/DisposableScope;Lcom/badoo/reaktive/maybe/Maybe;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)Lcom/badoo/reaktive/disposable/Disposable;
+	public static synthetic fun subscribeScoped$default (Lcom/badoo/reaktive/disposable/scope/DisposableScope;Lcom/badoo/reaktive/observable/Observable;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)Lcom/badoo/reaktive/disposable/Disposable;
+	public static synthetic fun subscribeScoped$default (Lcom/badoo/reaktive/disposable/scope/DisposableScope;Lcom/badoo/reaktive/single/Single;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)Lcom/badoo/reaktive/disposable/Disposable;
 }
 
 public final class com/badoo/reaktive/disposable/scope/DisposableScope$DefaultImpls {
@@ -1038,10 +1043,10 @@ public final class com/badoo/reaktive/observable/ZipWithKt {
 }
 
 public abstract interface class com/badoo/reaktive/plugin/ReaktivePlugin {
-	public abstract fun onAssembleCompletable (Lcom/badoo/reaktive/completable/Completable;)Lcom/badoo/reaktive/completable/Completable;
-	public abstract fun onAssembleMaybe (Lcom/badoo/reaktive/maybe/Maybe;)Lcom/badoo/reaktive/maybe/Maybe;
-	public abstract fun onAssembleObservable (Lcom/badoo/reaktive/observable/Observable;)Lcom/badoo/reaktive/observable/Observable;
-	public abstract fun onAssembleSingle (Lcom/badoo/reaktive/single/Single;)Lcom/badoo/reaktive/single/Single;
+	public fun onAssembleCompletable (Lcom/badoo/reaktive/completable/Completable;)Lcom/badoo/reaktive/completable/Completable;
+	public fun onAssembleMaybe (Lcom/badoo/reaktive/maybe/Maybe;)Lcom/badoo/reaktive/maybe/Maybe;
+	public fun onAssembleObservable (Lcom/badoo/reaktive/observable/Observable;)Lcom/badoo/reaktive/observable/Observable;
+	public fun onAssembleSingle (Lcom/badoo/reaktive/single/Single;)Lcom/badoo/reaktive/single/Single;
 }
 
 public final class com/badoo/reaktive/plugin/ReaktivePlugin$DefaultImpls {
@@ -1092,6 +1097,7 @@ public abstract interface class com/badoo/reaktive/scheduler/Scheduler {
 public abstract interface class com/badoo/reaktive/scheduler/Scheduler$Executor : com/badoo/reaktive/disposable/Disposable {
 	public abstract fun cancel ()V
 	public abstract fun submit-NqJ4yvY (JJLkotlin/jvm/functions/Function0;)V
+	public static synthetic fun submit-NqJ4yvY$default (Lcom/badoo/reaktive/scheduler/Scheduler$Executor;JJLkotlin/jvm/functions/Function0;ILjava/lang/Object;)V
 }
 
 public final class com/badoo/reaktive/scheduler/Scheduler$Executor$DefaultImpls {

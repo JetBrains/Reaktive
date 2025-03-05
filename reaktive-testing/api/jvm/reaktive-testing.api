@@ -37,9 +37,9 @@ public final class com/badoo/reaktive/test/base/TestSourceExtKt {
 }
 
 public abstract interface class com/badoo/reaktive/test/completable/DefaultCompletableObserver : com/badoo/reaktive/completable/CompletableObserver {
-	public abstract fun onComplete ()V
-	public abstract fun onError (Ljava/lang/Throwable;)V
-	public abstract fun onSubscribe (Lcom/badoo/reaktive/disposable/Disposable;)V
+	public fun onComplete ()V
+	public fun onError (Ljava/lang/Throwable;)V
+	public fun onSubscribe (Lcom/badoo/reaktive/disposable/Disposable;)V
 }
 
 public final class com/badoo/reaktive/test/completable/DefaultCompletableObserver$DefaultImpls {
@@ -67,10 +67,10 @@ public final class com/badoo/reaktive/test/completable/TestCompletableObserverEx
 }
 
 public abstract interface class com/badoo/reaktive/test/maybe/DefaultMaybeObserver : com/badoo/reaktive/maybe/MaybeObserver {
-	public abstract fun onComplete ()V
-	public abstract fun onError (Ljava/lang/Throwable;)V
-	public abstract fun onSubscribe (Lcom/badoo/reaktive/disposable/Disposable;)V
-	public abstract fun onSuccess (Ljava/lang/Object;)V
+	public fun onComplete ()V
+	public fun onError (Ljava/lang/Throwable;)V
+	public fun onSubscribe (Lcom/badoo/reaktive/disposable/Disposable;)V
+	public fun onSuccess (Ljava/lang/Object;)V
 }
 
 public final class com/badoo/reaktive/test/maybe/DefaultMaybeObserver$DefaultImpls {
@@ -106,10 +106,10 @@ public final class com/badoo/reaktive/test/maybe/TestMaybeObserverExtKt {
 }
 
 public abstract interface class com/badoo/reaktive/test/observable/DefaultObservableObserver : com/badoo/reaktive/observable/ObservableObserver {
-	public abstract fun onComplete ()V
-	public abstract fun onError (Ljava/lang/Throwable;)V
-	public abstract fun onNext (Ljava/lang/Object;)V
-	public abstract fun onSubscribe (Lcom/badoo/reaktive/disposable/Disposable;)V
+	public fun onComplete ()V
+	public fun onError (Ljava/lang/Throwable;)V
+	public fun onNext (Ljava/lang/Object;)V
+	public fun onSubscribe (Lcom/badoo/reaktive/disposable/Disposable;)V
 }
 
 public final class com/badoo/reaktive/test/observable/DefaultObservableObserver$DefaultImpls {
@@ -162,7 +162,7 @@ public final class com/badoo/reaktive/test/scheduler/TestScheduler : com/badoo/r
 }
 
 public abstract interface class com/badoo/reaktive/test/scheduler/TestScheduler$Timer {
-	public abstract fun advanceBy (J)V
+	public fun advanceBy (J)V
 	public abstract fun advanceBy-LRDsOJo (J)V
 	public abstract fun getTime-UwyO8pc ()J
 }
@@ -176,9 +176,9 @@ public final class com/badoo/reaktive/test/scheduler/TestSchedulerExtKt {
 }
 
 public abstract interface class com/badoo/reaktive/test/single/DefaultSingleObserver : com/badoo/reaktive/single/SingleObserver {
-	public abstract fun onError (Ljava/lang/Throwable;)V
-	public abstract fun onSubscribe (Lcom/badoo/reaktive/disposable/Disposable;)V
-	public abstract fun onSuccess (Ljava/lang/Object;)V
+	public fun onError (Ljava/lang/Throwable;)V
+	public fun onSubscribe (Lcom/badoo/reaktive/disposable/Disposable;)V
+	public fun onSuccess (Ljava/lang/Object;)V
 }
 
 public final class com/badoo/reaktive/test/single/DefaultSingleObserver$DefaultImpls {
