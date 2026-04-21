@@ -237,6 +237,7 @@ class MppConfigurationPlugin : Plugin<Project> {
                     testTask {
                         useKarma {
                             useChromeHeadlessNoSandbox()
+                            useConfigDirectory(project.rootProject.file("karma-config"))
                         }
                     }
                 }
