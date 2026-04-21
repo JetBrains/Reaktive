@@ -233,7 +233,13 @@ class MppConfigurationPlugin : Plugin<Project> {
     private fun setupWasmJsTarget(project: Project) {
         project.kotlin {
             wasmJs {
-                browser()
+                browser {
+                    testTask {
+                        useKarma {
+                            useChromeHeadlessNoSandbox()
+                        }
+                    }
+                }
             }
             sourceSets.getByName("wasmJsMain") {
                 dependencies {
