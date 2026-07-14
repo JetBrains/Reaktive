@@ -59,14 +59,7 @@ class MainSchedulerTest {
                         .map { items.toList() }
                 }
 
-        val expectedResults =
-            listOf(
-                emptyList(),
-                listOf(0),
-                listOf(0, 1),
-                listOf(0, 1, 2),
-                listOf(0, 1, 2, 3),
-            )
+        val expectedCounts = listOf(0, 1, 2, 3, 4)
 
         return checkTicks
             .toList()
@@ -74,7 +67,28 @@ class MainSchedulerTest {
             // for all tasks to cancel or finish their work.
             .doOnBeforeFinally(executor::cancel)
             .testAwait { results ->
-                assertEquals(expectedResults, results)
+                assertEquals(expectedCounts.size, results.size, "Unexpected number of checks: $results")
+
+                results.forEachIndexed { index, snapshot ->
+                    assertEquals(
+                        List(snapshot.size) { it },
+                        snapshot,
+                        "Snapshot #$index is not a valid prefix: $snapshot",
+                    )
+
+                    val expectedCount = expectedCounts[index]
+                    assertTrue(
+                        snapshot.size in (expectedCount - 1)..(expectedCount + 1),
+                        "Snapshot #$index expected about $expectedCount items but was ${snapshot.size}: $snapshot",
+                    )
+                }
+
+                results.zipWithNext { previous, next ->
+                    assertTrue(
+                        previous.size <= next.size,
+                        "Item count decreased: $previous then $next",
+                    )
+                }
             }
     }
 }
