@@ -124,9 +124,6 @@ class MppConfigurationPlugin : Plugin<Project> {
                 maybeCreate("darwinCommonMain").dependsOn(getByName("nativeCommonMain"))
                 maybeCreate("darwinCommonTest").dependsOn(getByName("nativeCommonTest"))
 
-                maybeCreate("watchosArm32Main").dependsOn(getByName("darwinCommonMain"))
-                maybeCreate("watchosArm32Test").dependsOn(getByName("darwinCommonTest"))
-
                 maybeCreate("watchosArm64Main").dependsOn(getByName("darwinCommonMain"))
                 maybeCreate("watchosArm64Test").dependsOn(getByName("darwinCommonTest"))
 
@@ -260,7 +257,6 @@ class MppConfigurationPlugin : Plugin<Project> {
             iosArm64()
             iosX64()
             iosSimulatorArm64()
-            watchosArm32()
             watchosArm64()
             watchosX64()
             watchosSimulatorArm64()
