@@ -9,7 +9,19 @@ repositories {
     gradlePluginPortal()
 
     val kotlin_repo_url: String? by project
-    kotlin_repo_url?.let { maven(it) }
+    val kotlin_version: String? by project
+    val kotlinRepoUrl = kotlin_repo_url
+    val kotlinVersion = kotlin_version
+    if (!kotlinRepoUrl.isNullOrEmpty() && !kotlinVersion.isNullOrEmpty()) {
+        exclusiveContent {
+            forRepository {
+                maven(kotlinRepoUrl)
+            }
+            filter {
+                includeVersionByRegex("org.jetbrains.kotlin.*", ".*", kotlinVersion)
+            }
+        }
+    }
 }
 
 dependencies {
