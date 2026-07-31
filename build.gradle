@@ -12,9 +12,18 @@ allprojects {
         google()
         mavenCentral()
 
-        if(project.hasProperty('kotlin_repo_url')) {
-            maven {
-                url kotlin_repo_url
+        def kotlinRepoUrl = project.findProperty('kotlin_repo_url')?.toString()
+        def kotlinVersion = project.findProperty('kotlin_version')?.toString()
+        if (kotlinRepoUrl && kotlinVersion) {
+            exclusiveContent {
+                forRepository {
+                    maven {
+                        url = uri(kotlinRepoUrl)
+                    }
+                }
+                filter {
+                    includeVersionByRegex('org.jetbrains.kotlin.*', '.*', kotlinVersion)
+                }
             }
         }
     }
