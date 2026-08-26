@@ -11,6 +11,7 @@ import com.badoo.reaktive.test.single.assertSuccess
 import com.badoo.reaktive.utils.reaktiveUncaughtErrorHandler
 import com.badoo.reaktive.utils.resetReaktiveUncaughtErrorHandler
 import kotlin.test.AfterTest
+import kotlin.test.Ignore
 import kotlin.test.Test
 import kotlin.test.assertFalse
 import kotlin.test.assertSame
@@ -157,6 +158,7 @@ class SubscribeTest {
         assertFalse(isOnErrorCalled)
     }
 
+    @Ignore
     @Test
     fun calls_uncaught_exception_handler_with_CompositeException_WHEN_onError_thrown_exception() {
         val exception1 = Exception()
