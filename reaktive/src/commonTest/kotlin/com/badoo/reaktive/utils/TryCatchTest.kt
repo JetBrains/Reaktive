@@ -5,7 +5,6 @@ import com.badoo.reaktive.base.tryCatch
 import com.badoo.reaktive.test.TestErrorCallback
 import com.badoo.reaktive.test.mockUncaughtExceptionHandler
 import kotlin.test.AfterTest
-import kotlin.test.Ignore
 import kotlin.test.Test
 import kotlin.test.assertIs
 import kotlin.test.assertSame
@@ -59,7 +58,6 @@ class TryCatchTest {
         assertSame(error2, error.cause2)
     }
 
-    @Ignore
     @Test
     fun swallows_WHEN_reaktiveUncaughtErrorHandler_thrown_exception() {
         reaktiveUncaughtErrorHandler = { throw Exception() }

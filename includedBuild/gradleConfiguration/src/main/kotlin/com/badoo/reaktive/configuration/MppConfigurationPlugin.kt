@@ -211,7 +211,15 @@ class MppConfigurationPlugin : Plugin<Project> {
         project.kotlin {
             js {
                 browser()
-                nodejs()
+                nodejs {
+                    testTask {
+                        useMocha {
+                            // Tests that print stack traces (the "error callback threw" paths) block on a
+                            // synchronous stderr pipe on loaded CI agents and exceed the 2s Mocha default.
+                            timeout = "30s"
+                        }
+                    }
+                }
             }
             sourceSets.getByName("jsMain") {
                 dependencies {
