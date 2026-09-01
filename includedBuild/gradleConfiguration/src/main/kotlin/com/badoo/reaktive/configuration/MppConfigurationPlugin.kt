@@ -127,23 +127,14 @@ class MppConfigurationPlugin : Plugin<Project> {
                 maybeCreate("watchosArm64Main").dependsOn(getByName("darwinCommonMain"))
                 maybeCreate("watchosArm64Test").dependsOn(getByName("darwinCommonTest"))
 
-                maybeCreate("watchosX64Main").dependsOn(getByName("darwinCommonMain"))
-                maybeCreate("watchosX64Test").dependsOn(getByName("darwinCommonTest"))
-
                 maybeCreate("watchosSimulatorArm64Main").dependsOn(getByName("darwinCommonMain"))
                 maybeCreate("watchosSimulatorArm64Test").dependsOn(getByName("darwinCommonTest"))
 
                 maybeCreate("tvosArm64Main").dependsOn(getByName("darwinCommonMain"))
                 maybeCreate("tvosArm64Test").dependsOn(getByName("darwinCommonTest"))
 
-                maybeCreate("tvosX64Main").dependsOn(getByName("darwinCommonMain"))
-                maybeCreate("tvosX64Test").dependsOn(getByName("darwinCommonTest"))
-
                 maybeCreate("tvosSimulatorArm64Main").dependsOn(getByName("darwinCommonMain"))
                 maybeCreate("tvosSimulatorArm64Test").dependsOn(getByName("darwinCommonTest"))
-
-                maybeCreate("macosX64Main").dependsOn(getByName("darwinCommonMain"))
-                maybeCreate("macosX64Test").dependsOn(getByName("darwinCommonTest"))
 
                 maybeCreate("macosArm64Main").dependsOn(getByName("darwinCommonMain"))
                 maybeCreate("macosArm64Test").dependsOn(getByName("darwinCommonTest"))
@@ -266,12 +257,9 @@ class MppConfigurationPlugin : Plugin<Project> {
             iosX64()
             iosSimulatorArm64()
             watchosArm64()
-            watchosX64()
             watchosSimulatorArm64()
             tvosArm64()
-            tvosX64()
             tvosSimulatorArm64()
-            macosX64()
             macosArm64()
         }
     }
